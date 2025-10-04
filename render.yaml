@@ -1,0 +1,10 @@
+services:
+  - type: web
+    name: coffee-shop-telegram-bot
+    env: docker
+    docker:
+      dockerfile: Dockerfile
+    envVars:
+      - key: SPRING_PROFILES_ACTIVE
+        value: production
+    plan: free

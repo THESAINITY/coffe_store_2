@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head th:replace="~{base :: head}"></head>
+
+<body>
+    <!-- Navbar Start -->
+    <div th:replace="~{base::navbar(reservation='active')}"></div>
+    <!-- Navbar End -->
+
+
+    <!-- Page Header Start -->
+    <div th:replace="~{base::header(text='Reservation')}"></div>
+    <!-- Page Header End -->
+
+
+    <!-- Reservation Start -->
+    <div th:replace = "~{base::reservation}"></div>
+    <!-- Reservation End -->
+
+
+    <!-- Footer Start -->
+    <div th:replace = "~{base::footer}"></div>
+    <!-- Footer End -->
+
+
+    <!-- Back to Top -->
+    <div th:replace= "~{base :: script}"></div>
+</body>
+
+</html>
