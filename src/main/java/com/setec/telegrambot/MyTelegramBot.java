@@ -11,21 +11,22 @@ import lombok.Data;
 
 @Service
 @Data
-
 public class MyTelegramBot {
 	
 	@Value("${token}")
 	private String token;
+	
 	@Value("${chat_id}")
 	private String chat_id;
-	
 	
 	private TelegramBot bot;
 	
 	public SendResponse message(String text) {
-		if(bot==null) bot = new TelegramBot(token);
+		if(bot == null) {
+			bot = new TelegramBot(token);
+		}
 		
 		SendResponse sendMessage = bot.execute(new SendMessage(chat_id, text));
-			return sendMessage;
+		return sendMessage;
 	}
 }
