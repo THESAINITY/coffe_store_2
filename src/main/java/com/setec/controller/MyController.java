@@ -20,7 +20,7 @@ public class MyController {
     
     @GetMapping({"/","/home"})
     public String home(Model mod) {
-        Booked booked = new Booked();
+        Booked booked = new Booked(1, "Khemry Munireach", "078466145", "munireach@gmail.com", "10/09/2025", "9:00 Am", 1);
         mod.addAttribute("booked", booked);
         return "index";
     }
@@ -42,7 +42,7 @@ public class MyController {
     
     @GetMapping("/reservation")
     public String reservation(Model mod) {
-        Booked booked = new Booked();
+        Booked booked = new Booked(1, "Khemry Munireach", "078466145", "munireach@gmail.com", "10/09/2025", "9:00 Am", 1);
         mod.addAttribute("booked", booked);
         logger.info("Reservation page loaded");
         return "reservation";
@@ -95,7 +95,7 @@ public class MyController {
                 "📅 Date: %s\n" +
                 "⏰ Time: %s\n" +
                 "👥 People: %d\n\n" +
-                "Thank you! 🫶🏿",
+                "Thank you!",
                 booked.getName() != null ? booked.getName() : "Not provided",
                 booked.getPhoneNumber() != null ? booked.getPhoneNumber() : "Not provided",
                 booked.getEmail() != null ? booked.getEmail() : "Not provided",
