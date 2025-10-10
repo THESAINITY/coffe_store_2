@@ -1,31 +1,35 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org">
+<head th:replace="~{base::head}">
 
-<head th:replace="~{base :: head}"></head>
+</head>
 
 <body>
-    <!-- Navbar Start -->
-    <div th:replace="~{base::navbar(reservation='active')}"></div>
-    <!-- Navbar End -->
+	<!-- Navbar Start -->
+	<div th:replace="~{base::navbar(reservation='active')}"></div>
+	<!-- Navbar End -->
 
 
-    <!-- Page Header Start -->
-    <div th:replace="~{base::header(text='Reservation')}"></div>
-    <!-- Page Header End -->
+	<!-- Page Header Start -->
+	<div th:replace="~{base :: header(text ='Reservation')}"></div>
+	<!-- Page Header End -->
 
 
-    <!-- Reservation Start -->
-    <div th:replace = "~{base::reservation}"></div>
+	<!-- Reservation Start -->
+  	<div th:replace="~{base :: reservation}"></div>
     <!-- Reservation End -->
 
 
-    <!-- Footer Start -->
-    <div th:replace = "~{base::footer}"></div>
-    <!-- Footer End -->
+	<!-- Footer Start -->
+	<div th:replace="~{base :: footer}"></div>
+	<!-- Footer End -->
 
 
-    <!-- Back to Top -->
-    <div th:replace= "~{base :: script}"></div>
+	<!-- Back to Top -->
+	<div th:replace="~{base :: script}"></div>
 </body>
 
 </html>
+

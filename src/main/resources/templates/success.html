@@ -1,66 +1,59 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="en" xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:th="http://www.thymeleaf.org"
+	xmlns:sec="http://www.thymeleaf.org">
 
-<head th:replace="~{base :: head}"></head>
+<head th:replace="~{base::head}">
+
+</head>
 
 <body>
-    <!-- Navbar Start -->
-    <div th:replace="~{base::navbar(success='active')}"></div> 
-    <!-- Navbar End -->
+	<!-- Navbar Start -->
+	<div th:replace="~{base::navbar}"></div>
+	<!-- Navbar End -->
 
+	<!-- Page Header Start -->
+	<div th:replace="~{base :: header(text ='Success')}"></div>
+	<!-- Page Header End -->
 
-    <!-- Page Header Start -->
-    <div th:replace="~{base::header(text='Success')}"></div>
-    <!-- Page Header End -->
-
-
-    <!-- Testimonial Start -->
-	<div class="row justify-content-center mt-5">
-    <div class="col-md-8">
-        <div class="card shadow-sm p-4" style="border-radius: 10px; background-color: #f8f9fa;">
-            <div class="mb-3 text-center">
-                <h4 class="text-primary text-uppercase" style="letter-spacing: 3px;">Booking Success</h4>
-            </div>
-
-            <table class="table table-bordered table-striped text-center mb-0">
-                <thead class="table-primary">
-                    <tr>
-                        <th>Name</th>
-                        <th>Phone</th>
-                        <th>Email</th>
-                        <th>Date</th>
-                        <th>Time</th>
-                        <th>Person</th>
-                    </tr>
-                </thead>
-                <tbody>
-                    <tr>
-                        <td th:text="${booked.name}">Name</td>
-                        <td th:text="${booked.phoneNumber}">Phone</td>
-                        <td th:text="${booked.email}">Email</td>
-                        <td th:text="${booked.date}">Date</td>
-                        <td th:text="${booked.time}">Time</td>
-                        <td th:text="${booked.person}">Person</td>
-                    </tr>
-                </tbody>
-            </table>
-
-            <div class="text-center mt-3">
-                <a href="/" class="btn btn-primary">Back to Home</a>
-            </div>
-        </div>
-    </div>
+	<!-- Success Start -->
+	<div class="container-fluid py-5">
+		<div class="d-flex justify-content-center align-items-center"
+			style="min-height: 80vh;">
+			<div class="card shadow-lg border-0 rounded-3" style="width: 40rem;">
+				<div class="card-body">
+					<h4 class="card-title text-primary mb-3 text-center">Booking</h4>
+					<ul class="list-group list-group-flush">
+						<li class="list-group-item"><strong>Name:</strong> <span
+							th:text="${booked.name}"></span></li>
+						<li class="list-group-item"><strong>Phone:</strong> <span
+							th:text="${booked.phoneNumber}"></span></li>
+						<li class="list-group-item"><strong>Email:</strong> <span
+							th:text="${booked.email}"></span></li>
+						<li class="list-group-item"><strong>Date:</strong> <span
+							th:text="${booked.date}"></span></li>
+						<li class="list-group-item"><strong>Time:</strong> <span
+							th:text="${booked.time}"></span></li>
+						<li class="list-group-item"><strong>Persons:</strong> <span
+							th:text="${booked.person}"></span></li>
+					</ul>
+				</div>
+				<div class="card-footer text-white text-center" style="background-color: rgb(79, 159, 28);">
+					Successfully Booked!</div>
+			</div>
+		</div>
 	</div>
-    <!-- Testimonial End -->
+
+	<!-- Success End -->
 
 
-    <!-- Footer Start -->
-    <div th:replace = "~{base::footer}"></div>
-    <!-- Footer End -->
+	<!-- Footer Start -->
+	<div th:replace="~{base :: footer}"></div>
+	<!-- Footer End -->
 
 
-    <!-- Back to Top -->
-    <div th:replace= "~{base :: script}"></div>
+	<!-- Back to Top -->
+	<div th:replace="~{base :: script}"></div>
 </body>
 
 </html>
