@@ -1,99 +1,26 @@
-<!DOCTYPE html>
-<html lang="en"
-      xmlns="http://www.w3.org/1999/xhtml"
-      xmlns:th="http://www.thymeleaf.org">
-
-<!-- HEAD FRAGMENT -->
-<head th:fragment="head">
-    <meta charset="utf-8">
-    <title>KOPPEE - Coffee Shop HTML Template</title>
-    <meta content="width=device-width, initial-scale=1.0" name="viewport">
-    <meta content="Free Website Template" name="keywords">
-    <meta content="Free Website Template" name="description">
-
-    <!-- Favicon -->
-    <link th:href="@{/img/favicon.ico}" rel="icon">
-
-    <!-- Google Font -->
-    <link rel="preconnect" href="https://fonts.gstatic.com">
-    <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@200;400&family=Roboto:wght@400;500;700&display=swap" rel="stylesheet">
-
-    <!-- Font Awesome -->
-    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet">
-
-    <!-- Libraries Stylesheet -->
-    <link th:href="@{/lib/owlcarousel/assets/owl.carousel.min.css}" rel="stylesheet">
-    <link th:href="@{/lib/tempusdominus/css/tempusdominus-bootstrap-4.min.css}" rel="stylesheet"/>
-
-    <!-- Customized Bootstrap Stylesheet -->
-    <link th:href="@{/css/style.min.css}" rel="stylesheet">
-</head>
-
-<body>
-    <!-- NAVBAR FRAGMENT -->
-    <div th:fragment="navbar(home='', about='', service='', menu='', reservation='', testimonial='', contact='')" class="container-fluid p-0 nav-bar">
-        <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
-            <a th:href="@{/}" class="navbar-brand px-lg-4 m-0">
-                <h1 class="m-0 display-4 text-uppercase text-white">KOPPEE</h1>
-            </a>
-            <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
-                <span class="navbar-toggler-icon"></span>
-            </button>
-            <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
-                <div class="navbar-nav ml-auto p-4">
-                    <a th:href="@{/home}" th:class="'nav-item nav-link ' + ${home}">Home</a>
-                    <a th:href="@{/about}" th:class="'nav-item nav-link ' + ${about}">About</a>
-                    <a th:href="@{/service}" th:class="'nav-item nav-link ' + ${service}">Service</a>
-                    <a th:href="@{/menu}" th:class="'nav-item nav-link ' + ${menu}">Menu</a>
-                    <div class="nav-item dropdown">
-                        <a href="#" th:class="'nav-link dropdown-toggle ' + ${reservation} + ' ' + ${testimonial}" data-toggle="dropdown">Pages</a>
-                        <div class="dropdown-menu text-capitalize">
-                            <a th:href="@{/reservation}" th:class="'dropdown-item ' + ${reservation}">Reservation</a>
-                            <a th:href="@{/testimonial}" th:class="'dropdown-item ' + ${testimonial}">Testimonial</a>
-                        </div>
+<div th:fragment="navbar(home='', about='', service='', menu='', reservation='', testimonial='', contact='')" class="container-fluid p-0 nav-bar">
+    <nav class="navbar navbar-expand-lg bg-none navbar-dark py-3">
+        <a th:href="@{/}" class="navbar-brand px-lg-4 m-0">
+            <h1 class="m-0 display-4 text-uppercase text-white">KOPPEE</h1>
+        </a>
+        <button type="button" class="navbar-toggler" data-toggle="collapse" data-target="#navbarCollapse">
+            <span class="navbar-toggler-icon"></span>
+        </button>
+        <div class="collapse navbar-collapse justify-content-between" id="navbarCollapse">
+            <div class="navbar-nav ml-auto p-4">
+                <a th:href="@{/home}" th:class="'nav-item nav-link ' + ${home}">Home</a>
+                <a th:href="@{/about}" th:class="'nav-item nav-link ' + ${about}">About</a>
+                <a th:href="@{/service}" th:class="'nav-item nav-link ' + ${service}">Service</a>
+                <a th:href="@{/menu}" th:class="'nav-item nav-link ' + ${menu}">Menu</a>
+                <div class="nav-item dropdown">
+                    <a href="#" th:class="'nav-link dropdown-toggle ' + ${reservation} + ' ' + ${testimonial}" data-toggle="dropdown">Pages</a>
+                    <div class="dropdown-menu text-capitalize">
+                        <a th:href="@{/reservation}" th:class="'dropdown-item ' + ${reservation}">Reservation</a>
+                        <a th:href="@{/testimonial}" th:class="'dropdown-item ' + ${testimonial}">Testimonial</a>
                     </div>
-                    <a th:href="@{/contact}" th:class="'nav-item nav-link ' + ${contact}">Contact</a>
                 </div>
-            </div>
-        </nav>
-    </div>
-
-    <!-- HEADER FRAGMENT -->
-    <div th:fragment="header(text='')" class="container-fluid page-header mb-5 position-relative overlay-bottom">
-        <div class="d-flex flex-column align-items-center justify-content-center pt-0 pt-lg-5" style="min-height: 400px">
-            <h1 class="display-4 mb-3 mt-0 mt-lg-5 text-white text-uppercase" th:text="${text}">Header Text</h1>
-            <div class="d-inline-flex mb-lg-5">
-                <p class="m-0 text-white"><a class="text-white" th:href="@{/home}">Home</a></p>
-                <p class="m-0 text-white px-2">/</p>
-                <p class="m-0 text-white" th:text="${text}">Page Name</p>
+                <a th:href="@{/contact}" th:class="'nav-item nav-link ' + ${contact}">Contact</a>
             </div>
         </div>
-    </div>
-
-    <!-- RESERVATION FRAGMENT -->
-    <div th:fragment="reservation">
-        <!-- Your reservation form code here -->
-    </div>
-
-    <!-- FOOTER FRAGMENT -->
-    <div th:fragment="footer">
-        <!-- Your footer code here -->
-    </div>
-
-    <!-- SCRIPT FRAGMENT -->
-    <div th:fragment="script">
-        <!-- JavaScript Libraries -->
-        <script src="https://code.jquery.com/jquery-3.4.1.min.js"></script>
-        <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.bundle.min.js"></script>
-        <script th:src="@{/lib/easing/easing.min.js}"></script>
-        <script th:src="@{/lib/waypoints/waypoints.min.js}"></script>
-        <script th:src="@{/lib/owlcarousel/owl.carousel.min.js}"></script>
-        <script th:src="@{/lib/tempusdominus/js/moment.min.js}"></script>
-        <script th:src="@{/lib/tempusdominus/js/moment-timezone.min.js}"></script>
-        <script th:src="@{/lib/tempusdominus/js/tempusdominus-bootstrap-4.min.js}"></script>
-
-        <!-- Template Javascript -->
-        <script th:src="@{/js/main.js}"></script>
-    </div>
-</body>
-</html>
+    </nav>
+</div>
